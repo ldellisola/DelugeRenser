@@ -66,8 +66,12 @@ func init() {
 func main() {
 	ticker := time.NewTicker(RunEvery)
 
+	// Run cleanup immediately
+	CleanTorrents(Hostname, uint(Port), Username, Password, KeepFor, DryRun)
+
 	go func() {
 		for range ticker.C {
+			// Run cleanup every RunEvery duration
 			CleanTorrents(Hostname, uint(Port), Username, Password, KeepFor, DryRun)
 		}
 	}()

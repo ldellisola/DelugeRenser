@@ -28,7 +28,7 @@ version: '3.7'
 
 services:
   torrentrenser:
-    image: ghcr.io/ldellisola/torrentrenser:latest
+    image: ghcr.io/ldellisola/deluge-renser:latest
     environment:
       DELUGE_HOSTNAME: deluge
       DELUGE_PASSWORD: password
